@@ -14,7 +14,7 @@ function find() {
 }
 
 function findBy(filter) {
-  return db('plabts').where(filter);
+  return db('plants').where(filter);
 }
 
 function findPlant(user_id) {

@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
             res.status(402).json({error: 'Please provide a Username, Password, Email and Phone number'})
         }
     } catch(error) {
-        res.status(500).json({ error: "Unable to Register, try again", error});
+        res.status(500).json({ error: "Unable to Register, try again"});
     }
 });
 
