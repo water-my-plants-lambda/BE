@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const Users= require('../data/userModel.js');
+const Users= require('../data/userModel');
 router.post('/', async (req, res) => {
     try{
         let user = req.body;
@@ -12,7 +12,6 @@ router.post('/', async (req, res) => {
             if(user){
               res.status(201).json({message: "Registration Successful", user})
             }
-
         } else {
             res.status(402).json({error: 'Please provide a Username, Password, Email and Phone number'})
         }
