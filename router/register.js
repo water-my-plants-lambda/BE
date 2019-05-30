@@ -12,11 +12,11 @@ router.post('/', async (req, res) => {
         console.log(user.username, user.password, user.phone, user.email );
         if(user.username && user.password && user.phone && user.email){
             console.log(user);
-            const user = await Users.add(user);
+            const user1 = await Users.add(user);
 
-            if(user){
-              console.log(user);
-              res.status(201).json({message: "Registration Successful", user})
+            if(user1){
+              console.log(user1);
+              res.status(201).json({message: "Registration Successful", user1})
             }
 
         } else {
