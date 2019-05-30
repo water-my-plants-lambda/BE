@@ -8,10 +8,10 @@ router.post('/', async (req, res) => {
         let user = req.body;
         console.log(user);
         const hash = bcrypt.hashSync(user.password, 3);
+        user.password = hash;
         console.log(hash);
         if(user.username && user.password && user.phone && user.email){
             console.log(user);
-            user.password = hash;
             const user = await Users.add(user);
             if(user){
               console.log(user);
