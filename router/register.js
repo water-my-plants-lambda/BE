@@ -9,14 +9,16 @@ router.post('/', async (req, res) => {
         console.log(user);
         const hash = bcrypt.hashSync(user.password, 3);
         user.password = hash;
-        console.log(hash);
+        console.log(user.username, user.password, user.phone, user.email );
         if(user.username && user.password && user.phone && user.email){
             console.log(user);
             const user = await Users.add(user);
+
             if(user){
               console.log(user);
               res.status(201).json({message: "Registration Successful", user})
             }
+
         } else {
             res.status(402).json({error: 'Please provide a Username, Password, Email and Phone number'})
         }
